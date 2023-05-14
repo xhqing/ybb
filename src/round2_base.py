@@ -123,9 +123,9 @@ def submit_transform(df, name=None):
     return df
 
 def save_hdf():
-    train = pd.read_csv('./data/Antai_AE/Antai_AE_round2_train_20190813.csv')
-    test = pd.read_csv('./data/Antai_AE/Antai_AE_round2_test_20190813.csv')
-    item = pd.read_csv('./data/Antai_AE/Antai_AE_round2_item_attr_20190813.csv')
+    train = pd.read_csv('./data/train.csv')
+    test = pd.read_csv('./data/test.csv')
+    item = pd.read_csv('./data/item.csv')
 
     df = pd.concat([train.assign(is_train=1), test.assign(is_train=0)])
     del train, test; gc.collect()
